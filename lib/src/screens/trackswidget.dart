@@ -47,7 +47,9 @@ class _TracksWidgetState extends State<TracksWidget> {
     if (response.statusCode == 200) {
       // If the call to the server was successful, parse the JSON.
       var responseJson = json.decode(response.body);
-      Track track = responseJson['data']
+      // assume there is only one track to display
+      // SO question mentioned 'display current track'
+      var track = responseJson['data']
           .map((musicFileJson) => Track.fromJson(musicFileJson['track']))
           .first;
       return track;
