@@ -21,9 +21,9 @@ class _TracksWidgetState extends State<TracksWidget> {
         if (snapshot.hasData) {
           Track track = snapshot.data;
           return Column(children: <Widget>[
-            new Text(track.title),
-            new Text(track.artist),
-            new Image.network(track.imageurl),
+            Text(track.title),
+            Text(track.artist),
+            Image.network(track.imageurl),
           ]);
         } else if (snapshot.hasError) {
           return Text("${snapshot.error}");
